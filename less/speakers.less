@@ -1,0 +1,43 @@
+.speakers{
+  margin-left: 170px;
+  width: 1270px;
+  &__slider{
+    margin-top: 66px;
+    width: inherit;
+    height: 526.8px;
+    &__element{
+      &+&{
+        margin-left: 20px;
+      }
+      &__name{
+        font-family: Helvetica Black;
+        font-size: 24px;
+        line-height: 34px;
+        text-transform: uppercase;
+        margin-top: 36px;
+      }
+      &__text{
+        .font-small;
+        margin-top: 2px;
+      }
+
+    }
+  }
+  &__rectangle{
+    position: absolute;
+    width: 253px;
+    height: 422px;
+    left: 149px;
+    top: 2116px;
+    background: @red;
+    z-index: -1;
+  }
+}
+
+//@spikers: 4;
+//
+//.speakersHover(@spikers, @i: 1) when (@i <= @spikers) {
+//    .speakers__slider:nth-child(@{i}) > img:hover{
+//
+//    }
+//}

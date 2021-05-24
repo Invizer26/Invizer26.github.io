@@ -1,0 +1,49 @@
+.info{
+  height: 205px;
+  width: 564px;
+  margin: 139px 59px;
+  &__content{
+    .font-small;
+    margin-top: 20px;
+    &__secondPart-text{
+      .secondPart-text;
+      font-family: Helvetica Medium;
+      margin-top: 14px;
+    }
+  }
+  &__rectangle{
+    width: 870px;
+    overflow-x: hidden;
+    position: absolute;
+    z-index: -1;
+    left: 570px;
+    top: 1653px;
+    & > div{
+      width: 884px;
+      height: 302px;
+      border: 6px solid @red;
+      box-sizing: border-box;
+    }
+    &+img{
+      height: 343px;
+    }
+  }
+}
+.info-title{
+  margin: 84px 76px 80px 168px;
+  & > .title{
+    margin-bottom: 71px;
+  }
+  .info__content{
+    font-size: 24px;
+    line-height: 36px;
+  }
+  &__rectangle{
+    width: 220px;
+    height: 220px;
+    position: absolute;
+    border: 6px solid @red;
+    left: 78px;
+    top: 579px;
+  }
+}

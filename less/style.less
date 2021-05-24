@@ -1,0 +1,66 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/* Fonts */
+@font-face {
+  font-family: Helvetica Black;
+  src: url("../fonts/Helvetica Black.otf");
+}
+
+@font-face {
+  font-family: Helvetica Light;
+  src: url("../fonts/Helvetica Light.otf");
+}
+
+@font-face {
+  font-family: Helvetica Medium;
+  src: url("../fonts/Helvetica Medium.otf");
+}
+
+@font-face {
+  font-family: Helvetica UltraLight;
+  src: url("../fonts/Helvetica UltraLight.otf");
+}
+
+@import "font";
+
+/* Colors */
+@red: rgba(218, 53, 59, 1);
+@halfOpacity-bg: rgba(0, 0, 0, 0.7);
+
+
+@breakpoint-mobile: ~"all  and (max-width: 980px)";
+
+body{
+  width: 1440px;
+  height: 5494px;
+}
+
+/* Blocks */
+@import "btn";
+@import "header";
+@import "navMenu";
+@import "title";
+@import "info";
+@import "line";
+@import "container";
+@import "speakers";
+@import "arrow";
+@import "program";
+@import "photoGallery";
+@import "participate";
+@import "footer";
+
+.secondPart-text{
+  color: @red;
+}
+
+//@media @breakpoint-mobile {
+//  body{
+//    width: 375px;
+//    height: 4544px;
+//  }
+//}
+

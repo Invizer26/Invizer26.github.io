@@ -1,0 +1,51 @@
+.arrow {
+  width: 43px;
+  height: 43px;
+  margin-top: 40px;
+  border: 2px solid @red;
+  background: white;
+  float: right;
+  margin-right: 90px;
+  &+&{
+    margin-right: 20px;
+  }
+
+
+  & > div {
+    box-sizing: border-box;
+    display: inline-block;
+  }
+
+  & > div:first-child {
+    border-top: 1.5px solid @red;
+    width: 15px;
+    margin-bottom: 3.7px;
+  }
+
+  & > div:nth-child(2) {
+    width: 9px;
+    height: 9px;
+    border-top: 1.5px solid @red;;
+    border-right: 1.5px solid @red;;
+    border-bottom: 0;
+    border-left: 0;
+    transform: rotate(45deg);
+    //margin-bottom: -0.5px;
+    margin-left: -13.5px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: @red;
+    & > div:first-child {
+      border-top: 1.5px solid white;
+    }
+    & > div:nth-child(2) {
+      border-top: 1.5px solid white;
+      border-right: 1.5px solid white;
+    }
+  }
+}
+.arrow-revers{
+  transform: rotate(180deg);
+}

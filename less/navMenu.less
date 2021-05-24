@@ -1,0 +1,31 @@
+.navMenu {
+  display: flex;
+  float: left;
+  width: 670px;
+  height: 40px;
+  margin-left: 30px;
+  line-height: 40px;
+  list-style: none;
+  font-family: Helvetica Medium;
+  color: white;
+  font-size: 16px;
+  flex-direction: row;
+  justify-content: space-around;
+
+  & > li {
+
+    &:hover {
+      font-family: Helvetica UltraLight;
+      font-size: 1.01rem;
+      margin-right: 0.9rem;
+      cursor: pointer;
+    }
+  }
+}
+
+//@media @breakpoint-mobile {
+//  .navMenu{
+//    flex-direction: column;
+//    flex-wrap: wrap;
+//  }
+//}

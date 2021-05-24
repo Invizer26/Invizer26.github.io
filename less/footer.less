@@ -1,0 +1,72 @@
+.footer{
+  width: 1440px;
+  height: 213px;
+  background-image: url("../images/footer.png");
+  position: relative;
+  top: -213px;
+  float: left;
+  &__links{
+    width: 348px;
+    margin-left: 546px;
+    margin-top: 60px;
+    justify-content: space-between;
+    & > img{
+      opacity: 0.6;
+      &:hover{
+        opacity: 1;
+        cursor: pointer;
+      }
+    }
+    &__rectangle{
+      width: 4px;
+      height: 4px;
+      background: @red;
+      margin-top: 11px;
+    }
+  }
+  &__logo{
+    height: 40px;
+    width: 157px;
+    margin-left: 90px;
+    margin-top: 41px;
+    margin-right: 82px;
+    float: left;
+    &__text{
+      font-family: Helvetica Black;
+      color: white;
+      font-size: 36px;
+      margin-left: 8px;
+      opacity: 0.6;
+    }
+  }
+  &__info{
+    width: 519px;
+    margin-top: 46px;
+    margin-left: 82px;
+    justify-content: space-between;
+    .font-small;
+    color: white;
+  }
+  &__e-mail{
+    display: inline-block;
+    float: right;
+    width: 191px;
+    height: 26px;
+    .font-small;
+    color: @red;
+    margin-right: 51px;
+    margin-top: -25px;
+  }
+  &__telethon{
+    display: inline-block;
+    float: right;
+    font-size: 16px;
+    line-height: 26px;
+    font-family: Helvetica Medium;
+    color: white;
+    width: 138px;
+    height: 26px;
+    margin-right: 90px;
+    margin-top: -25px;
+  }
+}

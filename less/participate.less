@@ -1,0 +1,69 @@
+.participate{
+  background: url("../images/roof.png");
+  width: 1440px;
+  height: 1004px;
+  float: left;
+  margin-top: 88px;
+  &__title{
+    margin: 92px 140px 39px 170px;
+  }
+  &__form{
+    margin-left: 170px;
+    width: 540px;
+    & > label{
+      width: 140px;
+      height: 26px;
+      font-family: Helvetica Light;
+      font-size: 14px;
+      line-height: 26px;
+      margin-bottom: 6px;
+    }
+    & > input, & > input::placeholder{
+      font-family: Helvetica Medium;
+      font-size: 20px;
+      line-height: 26px;
+      color: black;
+      text-transform: uppercase;
+    }
+    & > input{
+      background: #00000000;
+      border: 0;
+      margin-bottom: 18px;
+    }
+    &__separator{
+      background: black;
+      width: 540px;
+      height: 3px;
+      &+label{
+        margin-top: 30px;
+      }
+    }
+    & > button{
+      width: 540px;
+      height: 60px;
+      margin-top: 62px;
+      font-size: 20px;
+      line-height: 26px;
+      .btn-red;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+  }
+  &__rectangle{
+    position: absolute;
+    width: 465px;
+    height: 558px;
+    left: 890px;
+    top: 4582px;
+
+    border: 6px solid @red;
+    box-sizing: border-box;
+    &+img{
+      position: absolute;
+      width: 521px;
+      height: 573px;
+      left: 810px;
+      top: 4608px;
+    }
+  }
+}

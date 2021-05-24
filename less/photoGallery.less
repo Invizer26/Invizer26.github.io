@@ -1,0 +1,31 @@
+.photoGallery{
+  float: left;
+  margin-top: 90px;
+  margin-left: 169px;
+  width: 1271px;
+  &__title{
+    position: relative;
+    z-index: 1;
+  }
+  &__slider{
+    width: 1671px;
+    margin-top: 73px;
+    margin-left: -400px;
+    &__element{
+
+      &+&{
+        margin-left: 20px;
+      }
+    }
+  }
+  &__rectangle{
+    width: 220px;
+    height: 220px;
+    border: 6px solid @red;
+    box-sizing: border-box;
+    position: relative;
+    margin-bottom: -223px;
+    top: -152px;
+    left: -78px;
+  }
+}
