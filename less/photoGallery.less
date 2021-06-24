@@ -1,22 +1,22 @@
+@photoCount: 5;
+@photo: "../images/photo";
+@namePhoto: ~"element";
 .photoGallery{
   float: left;
   margin-top: 90px;
   margin-left: 169px;
-  width: 1271px;
+  width: calc(100% - 169px);
   &__title{
     position: relative;
     z-index: 1;
   }
   &__slider{
-    width: 1671px;
+    width: calc(100% + 400px);
     margin-top: 73px;
     margin-left: -400px;
-    &__element{
+    .generateBackground(@photo, @photoCount, @namePhoto);
+    .photoMargin(@photo, @photoCount, @namePhoto, ~"20px");
 
-      &+&{
-        margin-left: 20px;
-      }
-    }
   }
   &__rectangle{
     width: 220px;
@@ -27,5 +27,45 @@
     margin-bottom: -223px;
     top: -152px;
     left: -78px;
+  }
+}
+
+@media (max-width: @breakpoint-tablet) {
+  .photoGallery{
+    margin-left: 28px;
+    margin-top: 35px;
+    width: calc(100% - 28px);
+
+    &__rectangle{
+      width: 143px;
+      height: 143px;
+      border-width: 3px;
+      top: -55px;
+      margin-bottom: -104px;
+      left: 88px;
+    }
+
+    &__slider{
+      .tabletSize(@photoCount, @namePhoto);
+      .photoMargin(@photo, @photoCount, @namePhoto, ~"5px");
+      margin-top: 31px;
+      margin-left: -213px;
+      width: calc(100% + 213px);
+    }
+  }
+}
+
+@media (max-width: @breakpoint-mobile) {
+  .photoGallery{
+    &__title{
+      width: 215px;
+      height: 80px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__rectangle{
+      margin-bottom: -144px;
+    }
   }
 }

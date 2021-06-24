@@ -1,0 +1,39 @@
+.generateBackground(@url, @count, @name, @i: 1) when (@i <= @count){
+  &__@{name}@{i} {
+    width: 380px;
+    height: 380px;
+    @resultUrl: "@{url}@{i}.png";
+    @resultUrlHover: "@{url}@{i}h.png";
+
+
+    background: url(@resultUrl);
+    background-size: cover;
+    &:hover{
+      background: url(@resultUrlHover);
+      background-size: cover;
+    }
+  }
+  @next: @i + 1;
+  .generateBackground(@url, @count, @name, @next);
+}
+
+.photoMargin(@url, @count, @name, @margin, @i: 1) when (@i <= @count){
+  &__@{name}@{i}{
+    margin-left: @margin;
+  }
+  @next: @i + 1;
+  .photoMargin(@url, @count, @name, @margin, @next);
+}
+
+.tabletSize(@count, @name, @i: 1) when (@i <= @count){
+  &__@{name}@{i} {
+    width: 245px;
+    height: 245px;
+  }
+  @next: @i + 1;
+  .tabletSize(@count, @name, @next)
+}
+
+@media (max-width: @breakpoint-tablet) {
+  //.slick-current
+}

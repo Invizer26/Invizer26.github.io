@@ -1,13 +1,15 @@
 .row-container{
   display: flex;
   flex-direction: row;
-  width: 1440px;
+  width: auto;
+  justify-content: space-between;
   overflow-x: hidden;
   &+&{
     margin-top: 90px;
     .info{
       margin-left: 169px;
       margin-top: 115px;
+      width: 342px;
     }
   }
 }
@@ -15,4 +17,47 @@
 .collum-container{
   display: flex;
   flex-direction: column;
+}
+
+@media (min-width: @breakpoint-laptop-L) {
+  .row-container{
+    justify-content: space-between;
+
+  }
+}
+
+@media (max-width: 1414px) {
+  .row-container{
+    justify-content: normal;
+
+    &+&{
+
+      .info{
+        margin-top: 310px;
+      }
+    }
+  }
+}
+
+@media (max-width: @breakpoint-tablet) {
+  .row-container{
+
+    &+&{
+      height: 526px;
+      .info{
+        margin-top: 274px;
+        margin-left: 28px;
+      }
+    }
+  }
+}
+
+@media (max-width: @breakpoint-mobile) {
+  .row-container{
+
+    &+&{
+      margin-top: 40px;
+      height: 442px;
+    }
+  }
 }

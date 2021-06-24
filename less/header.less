@@ -1,55 +1,75 @@
-.header {
-  width: 1347px;
-  height: 518px;
-  margin-left: 49px;
-  padding-top: 37px;
-  background: @halfOpacity-bg;
-  &__bg{
-    width: 1440px;
-    height: 645px;
-    background: url("../images/bgHeader.png");
-  }
+.header{
+  width: 100%;
+  height: 600px;
+  padding-top: 45px;
+  background: url("../images/bgHeader.png") center;
+  background-size: auto 100%;
+
   &__rectangle{
     width: 113px;
     height: 45px;
-    margin-left: 277px;
+    position: absolute;
+    top: 0;
+    margin-left: 280px;
     background-color: @red;
-  }
-  & > .btn{
-    float: right;
-    margin-right: 46px;
-  }
-  &__logo {
-    height: 40px;
-    width: 157px;
-    margin-left: 41px;
-    float: left;
-    &__text{
-      font-family: Helvetica Black;
-      color: white;
-      font-size: 36px;
-      margin-left: 8px;
+
+    &__btn{
+      display: none;
+      line-height: 20px;
     }
   }
-  &__title{
-    width: 566px;
-    height: 272px;
-    margin-left: 121px;
-    margin-top: 86px;
-    float: left;
-    &__firstPart{
-      font-family: Helvetica Black;
-      font-size: 82px;
-      line-height: 110%;
-      color: @red;
+
+  &__content {
+    width: calc(100% - 92px);
+    height: 518px;
+    margin: 0 46px;
+    padding-top: 37px;
+    background: @halfOpacity-bg;
+
+    &__menu {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-left: 41px;
+
+      &__logo {
+        height: 40px;
+        width: 157px;
+
+        &__text {
+          font-family: Helvetica Black;
+          color: white;
+          font-size: 36px;
+          margin-left: 8px;
+        }
+      }
+
+      &__btn{
+        margin-left: auto;
+        margin-right: 46px;
+      }
+      & > a{
+        margin-left: auto
+      }
     }
-    &__secondPart{
+
+
+    &__titleFirstPart{
+      width: 566px;
+      height: 181px;
+      margin-left: 121px;
+      margin-top: 86px;
       font-family: Helvetica UltraLight;
       font-size: 82px;
       line-height: 110%;
       color: white;
     }
-    &__thirdPart{
+
+    &__titleSecondPart{
+      width: 324px;
+      height: 26px;
+      margin-left: 121px;
+      margin-top: 4px;
       font-family: Helvetica Light;
       font-size: 16px;
       line-height: 26px;
@@ -58,70 +78,164 @@
       margin-top: 4px;
       display: block;
     }
-    & > .btn{
+
+    & .btn:not(.btn-red){
+      margin-left: 121px;
       margin-top: 21px;
     }
-  }
-  &__announcement{
-    width: 500px;
-    height: 103px;
-    background: @red;
-    float: right;
-    margin-top: 289px;
-    margin-right: -44px;
-    & > img{
+
+    &__announcement{
+      width: 500px;
+      height: 103px;
+      background: @red;
       float: right;
-      margin-right: 44px;
-      margin-top: 21px;
-    }
-    &__text {
-      width: 218px;
-      height: 53.16px;
-      margin-left: 30px;
-      margin-top: 24.84px;
-      display: inline-block;
-      &__date {
-        font-family: Helvetica Black;
-        font-size: 22.9299px;
-        line-height: 33px;
-        color: white;
+      position: relative;
+      top: -4px;
+      right: -46px;
+      & > img{
+        float: right;
+        margin-right: 44px;
+        margin-top: 21px;
       }
-      &__venue {
-        font-family: Helvetica UltraLight;
-        font-size: 16px;
-        line-height: 26px;
-        text-transform: uppercase;
-        color: white;
+      &__text {
+        width: 218px;
+        height: 53.16px;
+        margin-left: 30px;
+        margin-top: 24.84px;
+        display: inline-block;
+        &__date {
+          font-family: Helvetica Black;
+          font-size: 22.9299px;
+          line-height: 33px;
+          color: white;
+        }
+        &__venue {
+          font-family: Helvetica UltraLight;
+          font-size: 16px;
+          line-height: 26px;
+          text-transform: uppercase;
+          color: white;
+        }
       }
     }
   }
 }
 
-//@media @breakpoint-mobile {
-//  .header{
-//    width: 347px;
-//    height: 584px;
-//    margin-left: 703.5px;
-//    &__bg{
-//      position: relative;
-//      width: 1484.6px;
-//      height: 665px;
-//      left: -689.49px;
-//      top: 0px;
-//    }
-//    &__rectangle{
-//      display: none;
-//    }
-//    &__logo{
-//      transform: scale(0.57,0.57);
-//    }
-//    & > .btn{
-//      position: absolute;
-//      width: 143px;
-//      height: 74px;
-//      left: 174px;
-//      top: 0px;
-//    }
-//  }
-//}
+@media (min-width: @breakpoint-laptop-L) {
+  .header{
+    background-size: cover;
+  }
+}
 
+@media (max-width: @breakpoint-laptop) {
+  .header{
+    height: 607px;
+    padding-top: 38px;
+
+    &__rectangle{
+      position: absolute;
+      width: 143px;
+      right: 88px;
+      left: auto;
+
+      &__btn{
+        display: block;
+        width: 100%;
+        margin-top: 34px;
+        font-size: 16px;
+      }
+    }
+
+    &__content{
+
+      &__menu{
+
+        &__btn{
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: @breakpoint-tablet) {
+  .header{
+    height: 561px;
+
+    &__content{
+      padding: 17px 14px 0 14px;
+      margin: 0 14px;
+      width: calc(100% - 56px);
+
+
+      &__menu{
+        display: block;
+        margin: 0;
+        &__logo{
+
+          & > img{
+            width: 14px;
+          }
+
+          &__text{
+            font-size: 21px;
+          }
+        }
+      }
+
+      &__titleFirstPart{
+        font-size: 45px;
+        width: 313px;
+        height: 100px;
+        margin-top: 30px;
+        margin-bottom: 0;
+        margin-left: 0;
+      }
+
+      &__titleSecondPart{
+        height: 44px;
+        width: 202px;
+        margin-left: 0;
+      }
+
+      & .btn{
+        margin-left: 0 !important;
+        margin-top: 20px !important;
+      }
+
+      &__announcement{
+        position: relative;
+
+        top: 107px;
+        right: -28px;
+        width:  290px;
+
+        & > img{
+          width: 116px;
+          position: relative;
+          top: -111px;
+          right: 29px;
+          margin: 0;
+        }
+
+      }
+    }
+  }
+}
+
+@media (max-width: @breakpoint-mobile) {
+  .header{
+    height: 627px;
+    &__rectangle{
+      right: 58px;
+    }
+
+    &__content{
+      height: 567px;
+
+      &__announcement{
+        top: 37px;
+      }
+    }
+  }
+}

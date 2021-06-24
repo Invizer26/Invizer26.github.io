@@ -1,14 +1,23 @@
+@speakerCount: 4;
+@speaker: "../images/speaker";
+@nameSpeaker: ~"img";
+
 .speakers{
   margin-left: 170px;
-  width: 1270px;
+  width: calc(100% - 170px);
+
   &__slider{
     margin-top: 66px;
-    width: inherit;
-    height: 526.8px;
+    width: 100%;
+
     &__element{
+
       &+&{
         margin-left: 20px;
       }
+
+      .generateBackground(@speaker, @speakerCount, @nameSpeaker);
+
       &__name{
         font-family: Helvetica Black;
         font-size: 24px;
@@ -16,6 +25,7 @@
         text-transform: uppercase;
         margin-top: 36px;
       }
+
       &__text{
         .font-small;
         margin-top: 2px;
@@ -23,6 +33,7 @@
 
     }
   }
+
   &__rectangle{
     position: absolute;
     width: 253px;
@@ -34,10 +45,64 @@
   }
 }
 
-//@spikers: 4;
-//
-//.speakersHover(@spikers, @i: 1) when (@i <= @spikers) {
-//    .speakers__slider:nth-child(@{i}) > img:hover{
-//
-//    }
-//}
+@media (max-width: 1414px) {
+  .speakers{
+    &__rectangle{
+      top: 2460px;
+    }
+  }
+}
+
+@media (max-width: @breakpoint-tablet) {
+  .speakers{
+    margin-left: 16px;
+    width: calc(100% - 16px);
+
+    &__rectangle{
+      top: 2262px;
+      width: 174px;
+      height: 271px;
+      left: 0;
+    }
+
+    &__slider{
+      &__element{
+        .tabletSize(@speakerCount, @nameSpeaker);
+
+        &__name{
+          width: 230px;
+          line-height: 24px;
+          margin-left: 15px;
+        }
+
+        &__text{
+          width: 230px;
+          margin-left: 15px;
+        }
+
+        &+&{
+          margin-left: 10px;
+        }
+
+      }
+    }
+  }
+}
+
+@media (max-width: @breakpoint-mobile) {
+  .speakers{
+    &__rectangle{
+      top: 1973px;
+    }
+
+    &__slider{
+      margin-top: 36px;
+
+      & > .slick-current{
+
+      }
+    }
+  }
+
+}
+

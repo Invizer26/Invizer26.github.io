@@ -1,6 +1,7 @@
 .participate{
-  background: url("../images/roof.png");
-  width: 1440px;
+  background: url("../images/roof.png") no-repeat center;
+  background-size: cover;
+  width: 100%;
   height: 1004px;
   float: left;
   margin-top: 88px;
@@ -9,7 +10,8 @@
   }
   &__form{
     margin-left: 170px;
-    width: 540px;
+    max-width: 540px;
+    width: calc(100% - 28px);
     & > label{
       width: 140px;
       height: 26px;
@@ -32,14 +34,14 @@
     }
     &__separator{
       background: black;
-      width: 540px;
+      width: 100%;
       height: 3px;
       &+label{
         margin-top: 30px;
       }
     }
     & > button{
-      width: 540px;
+      width: 100%;
       height: 60px;
       margin-top: 62px;
       font-size: 20px;
@@ -53,7 +55,7 @@
     position: absolute;
     width: 465px;
     height: 558px;
-    left: 890px;
+    right: 85px;
     top: 4582px;
 
     border: 6px solid @red;
@@ -62,8 +64,62 @@
       position: absolute;
       width: 521px;
       height: 573px;
-      left: 810px;
+      right: 109px;
       top: 4608px;
+    }
+  }
+}
+
+@media (max-width: 1414px) {
+  .participate{
+    &__rectangle{
+      display: none;
+      &+img{
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: @breakpoint-tablet) {
+  .participate{
+    &__title{
+      margin: 30px 0 13px 28px;
+    }
+
+    &__form{
+      margin-left: 28px;
+
+      & > input, & > input::placeholder{
+        font-size: 16px;
+      }
+
+      &__separator{
+        &+label{
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: @breakpoint-mobile){
+  .participate{
+    margin-top: 40px;
+    height: 640px;
+
+    &__form{
+      & > button{
+        margin-top: 40px;
+      }
+
+      & > [for="e-mail"]{
+        font-size: 0;
+      }
+
+      & > [name="e-mail"]::placeholder{
+        content: "E-mail";
+      }
     }
   }
 }

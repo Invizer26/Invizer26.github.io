@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "jquery-validation": "^1.19.3"
   },
   "devDependencies": {
     "gulp-less": "^4.0.1",

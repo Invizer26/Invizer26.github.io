@@ -1,16 +1,15 @@
 .navMenu {
   display: flex;
-  float: left;
-  width: 670px;
+  width: 620px;
   height: 40px;
-  margin-left: 30px;
+  margin: 0 30px;
   line-height: 40px;
   list-style: none;
   font-family: Helvetica Medium;
   color: white;
   font-size: 16px;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 
   & > li {
 
@@ -23,9 +22,27 @@
   }
 }
 
-//@media @breakpoint-mobile {
-//  .navMenu{
-//    flex-direction: column;
-//    flex-wrap: wrap;
-//  }
-//}
+@media (max-width: @breakpoint-tablet) {
+  .navMenu{
+    flex-wrap: wrap;
+    margin: 0;
+    width: auto;
+    max-width: 620px;
+
+  }
+}
+
+@media (max-width: @breakpoint-mobile) {
+  .navMenu{
+    flex-direction: column;
+    height: 108px;
+    line-height: 26px;
+    text-transform: uppercase;
+    justify-content: flex-start;
+
+    & > li{
+      margin-bottom: 10px;
+
+    }
+  }
+}

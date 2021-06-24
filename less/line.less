@@ -1,7 +1,7 @@
 .line {
   position: absolute;
   z-index: -1;
-  left: 810px;
+  right: 90px;
   top: 0;
 }
 .line2{
@@ -11,6 +11,8 @@
   top: 1473px;
 }
 
-@media all {
-
+@media (max-width: 1414px) {
+  .line, .line2{
+    display: none;
+  }
 }
